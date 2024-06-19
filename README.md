@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-commerce Price Tracker
 
-## Getting Started
+## Description
+A web application that allows users to input Amazon product links to scrape and display product details, providing insights into tracked items. Users can opt-in for email notifications to receive updates on product availability and price changes.
 
-First, run the development server:
+## Features
+- **Search Bar:** Input Amazon product links to scrape data.
+- **Product Details Display:** Showcases product image, title, pricing, and other relevant information scraped from the original website.
+- **Email Opt-in:** Created a modal for users to provide email addresses and opt-in for tracking.
+- **Automated Scraping:** Utilized cron jobs to automate periodic scraping for up-to-date data.
+- **Email Alerts:** Configured email alerts for various scenarios like back in stock or lowest price notifications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tech Stack
+- **Frontend:** Next.js, Headless UI, Tailwind CSS
+- **Backend:** Bright Data, Cheerio, Nodemailer, MongoDB
