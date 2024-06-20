@@ -5,6 +5,14 @@ const nextConfig = {
     },
     eslint: {
         ignoreDuringBuilds: true
+    },
+
+    experimental: {
+        serverActions: true,
+        serverComponentsExternalPackages: ['mongoose']
+    },
+    images: {
+        domains: ['m.media-amazon.com']
     }
 };
 
