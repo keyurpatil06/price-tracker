@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700']
+})
 
 export const metadata: Metadata = {
-  title: "Price Tracker",
-  description: "A web app for scraping and displaying Amazon product details from links, with email notifications for updates on availability and price changes.",
+    title: "Price Tracker",
+    description: "Track product prices effortlessly and sav money on your online shopping.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                <main className="max-w-10xl mx-auto">
+                    <Navbar />
+                    {children}
+                </main>
+            </body>
+        </html>
+    );
 }
