@@ -43,7 +43,7 @@ const Modal = ({ productId }: Props) => {
                             leaveFrom='opacity-100'
                             leaveTo='opacity-0'
                         >
-                            <DialogPanel className='fixed inset-0' ></DialogPanel>
+                            <DialogPanel className='fixed inset-0' />
                         </TransitionChild>
 
                         <span className='inline-block h-screen align-middle' aria-hidden='true' />
@@ -102,7 +102,7 @@ const Modal = ({ productId }: Props) => {
                                             />
                                         </div>
 
-                                        <button type="submit" className='dialog-btn'>
+                                        <button type="submit" className='dialog-btn' disabled={isSubmitting}>
                                             {isSubmitting ? 'Submitting...' : 'Track'}
                                         </button>
                                     </form>
