@@ -13,6 +13,9 @@ const Modal = ({ productId }: Props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [email, setEmail] = useState('');
 
+    const openModal = () => setIsOpen(true);
+    const closeModal = () => setIsOpen(false);
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -24,15 +27,12 @@ const Modal = ({ productId }: Props) => {
         closeModal();
     }
 
-    const openModal = () => setIsOpen(true);
-    const closeModal = () => setIsOpen(false);
-
     return (
         <>
             <button type="button" className='btn' onClick={openModal}>Track</button>
 
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as='div' onClose={() => { closeModal }} className="dialog-container">
+                <Dialog as='div' onClose={openModal} className="dialog-container">
                     <div className="min-h-screen px-4 text-center">
                         <TransitionChild
                             as={Fragment}
@@ -102,7 +102,7 @@ const Modal = ({ productId }: Props) => {
                                             />
                                         </div>
 
-                                        <button type="submit" className='dialog-btn' disabled={isSubmitting}>
+                                        <button type='submit' className='dialog-btn'>
                                             {isSubmitting ? 'Submitting...' : 'Track'}
                                         </button>
                                     </form>
